@@ -15,15 +15,17 @@ public class Activities
 
     protected static void WaitingAnim(int _duration)
     {
-        List<string> animation = new List<string>();
-        animation.Add("|");
-        animation.Add("/");
-        animation.Add("-");
-        animation.Add("\\");
-        animation.Add("|");
-        animation.Add("/");
-        animation.Add("-");
-        animation.Add("\\");
+        List<string> animation = new List<string>
+        {
+            "|",
+            "/",
+            "-",
+            "\\",
+            "|",
+            "/",
+            "-",
+            "\\"
+        };
 
         DateTime _startTime = DateTime.Now;
         DateTime _endTime = _startTime.AddSeconds(_duration);
