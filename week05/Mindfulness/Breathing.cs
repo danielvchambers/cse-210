@@ -1,6 +1,6 @@
 public class Breathing : Activities
 {
-    public Breathing() : base()
+    public Breathing(int time) : base(time)
     {
         base._activityName = "Breathing Exercise";
         base._activityInstr = "Clear Your mind and take deep breathes according to the Timeing in the activity.";
@@ -8,13 +8,13 @@ public class Breathing : Activities
 
     public void Run()
     {
-        private DateTime _startTime = DateTime.Now;
-        private DateTime _endTime = _startTime.AddSeconds(_activityRunTime);
+        DateTime _startTime = DateTime.Now;
+        DateTime _endTime = _startTime.AddSeconds(_activityRunTime);
         while (DateTime.Now <= _endTime)
         {
-            Console.Writeline("Breathe in");
-            Activities.Waitinganim(3);
-            Console.Writeline("Breathe out");
+            Console.WriteLine("Breathe in");
+            Activities.WaitingAnim(3);
+            Console.WriteLine("Breathe out");
         }
     }
 }

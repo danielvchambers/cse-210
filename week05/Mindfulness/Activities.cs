@@ -13,7 +13,7 @@ public class Activities
         _activityRunTime = time;
     }
 
-    protected void WaitingAnim(int _duration)
+    protected static void WaitingAnim(int _duration)
     {
         List<string> animation = new List<string>();
         animation.Add("|");
@@ -24,15 +24,16 @@ public class Activities
         animation.Add("/");
         animation.Add("-");
         animation.Add("\\");
-        private DateTime _startTime = DateTime.Now;
-        private DateTime _endTime = _startTime.AddSeconds(_duration);
-        while (DateTime.Now < endTime)
+
+        DateTime _startTime = DateTime.Now;
+        DateTime _endTime = _startTime.AddSeconds(_duration);
+        while (DateTime.Now < _endTime)
         {
             int i = 0;
             string s = animation[i];
-            console.Write(s);
-            thread.Sleep(500);
-            console.Write("\b \b");
+            Console.Write(s);
+            Thread.Sleep(500);
+            Console.Write("\b \b");
             i++;
             if (i >= animation.Count())
             {
@@ -43,17 +44,17 @@ public class Activities
 
     protected void DisplayRandIndex(List<string> list)
     {
-        int randInt = ran.Next();
+        int randInt = ran.Next(list.Count);
         Console.WriteLine(list[randInt]);
     }
 
     public void DisplayStartMess()
     {
-        Console.WriteLine(_startMessage)
+        Console.WriteLine(_startMessage);
     }
 
     public void DisplayEndMess()
     {
-        Console.WriteLine(_endMessage)
+        Console.WriteLine(_endMessage);
     }
 }

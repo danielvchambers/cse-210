@@ -4,23 +4,27 @@ class Program
 {
     static void Main(string[] args)
     {
-        console.WriteLine("Please Pick A Mindful Activity by typing the number infront of the activity");
-        console.WriteLine("1. Breathing Activity");
-        console.WriteLine("2. Reflecting Activity");
-        console.WriteLine("3. Listing Activity");
-        console.WriteLine("4. Quit");
-        string _choice = console.ReadLine();
-        if (_choice == 1)
+        Console.WriteLine("Please Pick A Mindful Activity by typing the number infront of the activity");
+        Console.WriteLine("1. Breathing Activity");
+        Console.WriteLine("2. Reflecting Activity");
+        Console.WriteLine("3. Listing Activity");
+        Console.WriteLine("4. Quit");
+        string _choice = Console.ReadLine();
+        int choice = int.Parse(_choice);
+        if (choice == 1)
         {
-            Breathing.Run();
+            Breathing _breathing = new Breathing(30); // Hard coded duration of 180 seconds ToDo: Implement user input for duration
+            _breathing.Run();
         }
-        else if (_choice == 2)
+        else if (choice == 2)
         {
-            Relfecting.Run();
+            Reflection _reflection = new Reflection(30);
+            _reflection.Run();
         }
-        else if (_choice == 3)
+        else if (choice == 3)
         {
-            Listing.Run();
+            Listing _listing = new Listing(30);
+            _listing.Run();
         }
     }
 }
