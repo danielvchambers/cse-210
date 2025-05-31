@@ -35,17 +35,8 @@ public class Reflection : Activities
         {
             Console.Write("Relfect on ");
             base.DisplayRandIndex(_questions);
+            Console.ReadLine();
             Activities.WaitingAnim(5);
         }
-    }
-
-    public List<string> GetListProms()
-    {
-        return _prompts;
-    }
-
-    public List<string> GetListQues()
-    {
-        return _questions;
     }
 }
